@@ -14,7 +14,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 // import dotenv from "dotenv";
 
-const BACKEND_UPLOAD_URL = "http://deploy.100xnavi.com";
+const BACKEND_UPLOAD_URL = "https://deploy.100xnavi.com";
 
 export function Landing() {
 	const [repoUrl, setRepoUrl] = useState("");
@@ -122,13 +122,13 @@ export function Landing() {
 								id='deployed-url'
 								readOnly
 								type='url'
-								value={`http://${uploadId}.deploy.100xnavi.com/index.html`}
+								value={`https://${uploadId}.deploy.100xnavi.com/index.html`}
 							/>
 						</div>
 						<br />
 						<Button className='w-full' variant='outline' disabled={!deployed}>
 							<a
-								href={`http://${uploadId}.deploy.100xnavi.com/index.html`}
+								href={`https://${uploadId}.deploy.100xnavi.com/index.html`}
 								target='_blank'>
 								{deployed ? "Visit Website" : `${status}`}
 							</a>
