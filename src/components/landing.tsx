@@ -41,7 +41,7 @@ export function Landing() {
 				} catch (err) {
 					console.error("Error fetching status:", err);
 				}
-			}, 3000);
+			}, 5000);
 
 			return () => clearInterval(interval); // Cleanup on unmount
 		}
@@ -90,6 +90,10 @@ export function Landing() {
 								const res = await axios.post(`${BACKEND_UPLOAD_URL}/deploy`, {
 									repoUrl,
 								});
+								console.log("Response:", res.status);
+								console.log("Response:", res.statusText);
+
+								console.log("Response:", res.data);
 								setUploadId(res.data.id);
 								setUploading(false);
 							}}
