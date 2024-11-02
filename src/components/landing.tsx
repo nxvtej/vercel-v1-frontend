@@ -126,13 +126,13 @@ export function Landing() {
 								id='deployed-url'
 								readOnly
 								type='url'
-								value={`https://${uploadId}.deploy.100xnavi.com/index.html`}
+								value={`https://${uploadId}.deployed.100xnavi.com/index.html`}
 							/>
 						</div>
 						<br />
 						<Button className='w-full' variant='outline' disabled={!deployed}>
 							<a
-								href={`https://${uploadId}.deploy.100xnavi.com/index.html`}
+								href={`https://${uploadId}.deployed.100xnavi.com/index.html`}
 								target='_blank'>
 								{deployed ? "Visit Website" : `${status}`}
 							</a>
