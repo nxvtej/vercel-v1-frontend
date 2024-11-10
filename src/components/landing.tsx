@@ -14,8 +14,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 // import dotenv from "dotenv";
 
-// const BACKEND_UPLOAD_URL = "https://deploy.100xnavi.com";
-const BACKEND_UPLOAD_URL = "http://localhost:8000";
+const BACKEND_UPLOAD_URL = "https://deploy.100xnavi.com";
+// const BACKEND_UPLOAD_URL = "http://localhost:8000";
 
 export function Landing() {
 	const [repoUrl, setRepoUrl] = useState("");
