@@ -14,7 +14,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 // import dotenv from "dotenv";
 
-const BACKEND_UPLOAD_URL = "https://deploy.100xnavi.com";
+// const BACKEND_UPLOAD_URL = "https://deploy.100xnavi.com";
+const BACKEND_UPLOAD_URL = "http://localhost:8000";
 
 export function Landing() {
 	const [repoUrl, setRepoUrl] = useState("");
@@ -24,6 +25,7 @@ export function Landing() {
 	const [deployed, setDeployed] = useState(false);
 	const [status, setStatus] = useState("");
 	const [push, setPush] = useState(false);
+	const [id, setId] = useState("");
 
 	useEffect(() => {
 		if (uploadId && !deployed) {
@@ -67,6 +69,12 @@ export function Landing() {
 								onChange={(e) => setRepoUrl(e.target.value)}
 								placeholder='https://github.com/nxvtej/vercel-test'
 							/>
+							<Input
+								placeholder='enter custom name'
+								onChange={(e) => {
+									setId(e.target.value);
+								}}
+							/>
 						</div>
 						<div className='flex items-center justify-between'>
 							<span className=' text-xs text-gray-600 underline'>
@@ -89,6 +97,7 @@ export function Landing() {
 								setUploading(true);
 								const res = await axios.post(`${BACKEND_UPLOAD_URL}/deploy`, {
 									repoUrl,
+									id,
 								});
 								console.log("Response:", res.status);
 								console.log("Response:", res.statusText);
