@@ -70,7 +70,7 @@ export function Landing() {
 								placeholder='https://github.com/nxvtej/vercel-test'
 							/>
 							<Input
-								placeholder='enter custom name'
+								placeholder='enter custom name (small cap only)'
 								onChange={(e) => {
 									setId(e.target.value);
 								}}
