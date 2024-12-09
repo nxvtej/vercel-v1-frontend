@@ -21,6 +21,8 @@ export function Landing() {
 	const [repoUrl, setRepoUrl] = useState("");
 	const testing = "https://github.com/nxvtej/vercel-test";
 	const [uploadId, setUploadId] = useState("");
+	const BACKEND_HANDLE_URL = `https://${uploadId}.deployed.100xnavi.com/index.html`;
+	// const BACKEND_HANDLE_URL_LOCAL = `http://${uploadId}.localhost:3001/index.html`;
 	const [uploading, setUploading] = useState(false);
 	const [deployed, setDeployed] = useState(false);
 	const [status, setStatus] = useState("");
@@ -70,7 +72,7 @@ export function Landing() {
 								placeholder='https://github.com/nxvtej/vercel-test'
 							/>
 							<Input
-								placeholder='enter custom name'
+								placeholder='enter custom name (small_cap only)'
 								onChange={(e) => {
 									setId(e.target.value);
 								}}
@@ -135,14 +137,12 @@ export function Landing() {
 								id='deployed-url'
 								readOnly
 								type='url'
-								value={`https://${uploadId}.deployed.100xnavi.com/index.html`}
+								value={BACKEND_HANDLE_URL}
 							/>
 						</div>
 						<br />
 						<Button className='w-full' variant='outline' disabled={!deployed}>
-							<a
-								href={`https://${uploadId}.deployed.100xnavi.com/index.html`}
-								target='_blank'>
+							<a href={BACKEND_HANDLE_URL} target='_blank'>
 								{deployed ? "Visit Website" : `${status}`}
 							</a>
 						</Button>
