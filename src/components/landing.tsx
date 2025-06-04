@@ -148,7 +148,7 @@ export function Landing() {
             <CardTitle className="text-xl">Deployment Status</CardTitle>
             <CardDescription>
               {deployed
-                ? "Your website is successfully deployed!"
+                ? "Your website will be successfully deployed in 30s!"
                 : "Deploying... Please wait."}
             </CardDescription>
           </CardHeader>
